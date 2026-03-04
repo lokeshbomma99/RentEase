@@ -7,13 +7,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  server: {
-    port: 5173,
-    proxy: {
-      '/api': {
-        target: 'https://rent-ease-red.vercel.app/',
-        changeOrigin: true,
-      }
-    }
-  }
+  
 })
