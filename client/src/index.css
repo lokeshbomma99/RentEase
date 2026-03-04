@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* ── GLOBAL DARK MODE ─────────────────────────────────────────────────── */
+html, body, #root {
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode */
+html body { background-color: #f9fafb; color: #111827; }
+
+/* Dark Mode — applied via JS on <html> element */
+html.dark,
+html.dark body,
+html.dark #root {
+  background-color: #111827 !important;
+  color: #f9fafb !important;
+}
+
+/* Dark mode — all white backgrounds become dark */
+html.dark .bg-white { background-color: #1f2937 !important; }
+html.dark .bg-gray-50 { background-color: #111827 !important; }
+html.dark .bg-gray-100 { background-color: #374151 !important; }
+html.dark .bg-gray-200 { background-color: #4b5563 !important; }
+
+/* Dark mode — text colors */
+html.dark .text-gray-800 { color: #f9fafb !important; }
+html.dark .text-gray-700 { color: #e5e7eb !important; }
+html.dark .text-gray-600 { color: #d1d5db !important; }
+html.dark .text-gray-500 { color: #9ca3af !important; }
+
+/* Dark mode — borders */
+html.dark .border-gray-200 { border-color: #374151 !important; }
+html.dark .border-gray-100 { border-color: #374151 !important; }
+
+/* Dark mode — inputs */
+html.dark input,
+html.dark select,
+html.dark textarea {
+  background-color: #374151 !important;
+  color: #f9fafb !important;
+  border-color: #4b5563 !important;
+}
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #9ca3af !important;
+}
+
+/* Dark mode — cards/shadows */
+html.dark .shadow,
+html.dark .shadow-md,
+html.dark .shadow-lg,
+html.dark .shadow-xl {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5) !important;
+}
+
+/* Dark mode — table */
+html.dark table { background-color: #1f2937 !important; }
+html.dark th { background-color: #374151 !important; color: #e5e7eb !important; }
+html.dark td { color: #d1d5db !important; border-color: #374151 !important; }
+html.dark tr:hover { background-color: #374151 !important; }
+
+/* Navbar links */
+.nav-link {
+  color: #374151;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.nav-link:hover { color: #2563eb; }
+html.dark .nav-link { color: #d1d5db !important; }
+html.dark .nav-link:hover { color: #60a5fa !important; }
