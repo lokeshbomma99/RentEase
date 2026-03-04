@@ -11,7 +11,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://localhost:5003',
+        target: 'https://rent-ease-red.vercel.app/',
         changeOrigin: true,
       }
     }
