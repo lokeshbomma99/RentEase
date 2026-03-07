@@ -12,15 +12,22 @@ export default function Register() {
   const [form, setForm] = useState({ name: '', email: '', password: '', phone: '', role: 'user' })
   const [loading, setLoading] = useState(false)
 
-  const handleSubmit = async (e) => {
+ const handleSubmit = async (e) => {
   e.preventDefault()
   setLoading(true)
+
   try {
     await register(form)
-    toast.success('Registration successful! Please login.')
+    alert("Registration successful! Please login.")
     navigate('/login')
   } catch (err) {
-    toast.error(err.response?.data?.message || 'Registration failed')
+    if (err.response?.data?.message === "Invalid email") {
+      alert("Incorrect Email")
+    } else if (err.response?.data?.message === "Invalid password") {
+      alert("Incorrect Password")
+    } else {
+      alert("Registration failed")
+    }
   } finally {
     setLoading(false)
   }
