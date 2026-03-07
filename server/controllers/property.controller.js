@@ -4,7 +4,7 @@ const { cloudinary } = require('../config/cloudinary');
 
 exports.getAllProperties = async (req, res) => {
   try {
-    const { city, type, minPrice, maxPrice, furnished, parking, petFriendly, page = 1, limit = 50 } = req.query;
+    const { city, type, minPrice, maxPrice, furnished, parking, petFriendly, page = 1, limit = 500 } = req.query;
     const filter = { isApproved: true, status: { $in: ['available', 'rented'] } };
     if (city) filter['address.city'] = new RegExp(city, 'i');
     if (type) filter.type = type;
