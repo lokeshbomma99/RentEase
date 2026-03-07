@@ -12,7 +12,20 @@ export default function Register() {
   const [form, setForm] = useState({ name: '', email: '', password: '', phone: '', role: 'user' })
   const [loading, setLoading] = useState(false)
 
- const handleSubmit = async (e) => { e.preventDefault() setLoading(true) try { await register(form) toast.success('Registration successful! Please login.') navigate('/login') } catch (err) { toast.error(err.response?.data?.message || 'Registration failed') } finally { setLoading(false) } }
+ const handleSubmit = async (e) =>
+   { 
+     e.preventDefault() 
+       setLoading(true) 
+         try { 
+           await register(form) 
+             toast.success('Registration successful! Please login.') 
+               navigate('/login') 
+         } catch (err)
+         { 
+           toast.error(err.response?.data?.message || 'Registration failed')
+         } finally { setLoading(false)
+                   }
+   }
 
   const inputCls = "w-full border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
 
